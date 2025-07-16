@@ -16,6 +16,9 @@ An always-on, voice-controlled AI assistant that can:
 
 - You (Team Lead)
 - Team Member
+-hello welcome
+
+
 
 ---
 
