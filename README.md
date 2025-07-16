@@ -14,9 +14,8 @@ An always-on, voice-controlled AI assistant that can:
 
 ## 👥 Team Members
 
-- You (Team Lead)
-- Team Member
--hello welcome
+- MSRAM(Lead)
+- GOWSIKAN(Member)
 
 
 
