@@ -36,4 +36,22 @@ An always-on, voice-controlled AI assistant that can:
 
 ## 📁 Project Structure
 
-<pre lang="markdown"> ``` JARVIX_2.0/ │ ├── main.py # Main assistant script ├── requirements.txt # Python dependencies ├── README.md # Project documentation │ ├── modules/ # Optional: Additional feature modules │ ├── file_ops.py # File operations (create, delete, rename) │ ├── system_control.py # System commands (shutdown, lock, etc.) │ └── voice_commands.py # Speech recognition logic │ ├── utils/ # Utility functions/helpers (optional) │ └── logger.py # Custom logger (if needed) │ ├── assets/ # Images, icons, etc. (if used in UI/voice) │ └── tests/ # Unit tests for modules (optional) └── test_file_ops.py ``` </pre>
+JARVIX_2.0/
+│
+├── main.py                 # Main assistant script
+├── requirements.txt        # Python dependencies
+├── README.md               # Project documentation
+│
+├── modules/                # Optional: Additional feature modules
+│   ├── file_ops.py         # File operations (create, delete, rename)
+│   ├── system_control.py   # System commands (shutdown, lock, etc.)
+│   └── voice_commands.py   # Speech recognition logic
+│
+├── utils/                  # Utility functions/helpers (optional)
+│   └── logger.py           # Custom logger (if needed)
+│
+├── assets/                 # Images, icons, etc. (if used in UI/voice)
+│
+└── tests/                  # Unit tests for modules (optional)
+    └── test_file_ops.py
+
