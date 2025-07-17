@@ -33,8 +33,3 @@ An always-on, voice-controlled AI assistant that can:
 | 📺 YouTube + Search         | Play videos, search Google                 |
 | 🧠 GPT Integration          | Understand smart natural language          |
 | 🔕 Silent Background Mode   | Runs in tray, never disturbs UI            |
-
----
-
-## 📁 Folder Structure
-
