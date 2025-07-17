@@ -35,7 +35,7 @@ An always-on, voice-controlled AI assistant that can:
 | 🔕 Silent Background Mode   | Runs in tray, never disturbs UI            |
 
 ## 📁 Project Structure
-
+```
 JARVIX_2.0/
 │
 ├── main.py                 # Main assistant script
@@ -54,4 +54,4 @@ JARVIX_2.0/
 │
 └── tests/                  # Unit tests for modules (optional)
     └── test_file_ops.py
-
+```
