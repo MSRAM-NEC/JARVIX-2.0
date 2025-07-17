@@ -36,22 +36,43 @@ An always-on, voice-controlled AI assistant that can:
 
 ## 📁 Project Structure
 ```
-JARVIX_2.0/
+JARVIX-2.0/
 │
-├── main.py                 # Main assistant script
-├── requirements.txt        # Python dependencies
-├── README.md               # Project documentation
+├── main.py                     # The central entry point. Starts the assistant and runs the main loop.
 │
-├── modules/                # Optional: Additional feature modules
-│   ├── file_ops.py         # File operations (create, delete, rename)
-│   ├── system_control.py   # System commands (shutdown, lock, etc.)
-│   └── voice_commands.py   # Speech recognition logic
+├── requirements.txt            # All project dependencies.
+├── README.md                   # Project documentation.
+├── config.py                   # Central configuration (e.g., save paths, default settings).
 │
-├── utils/                  # Utility functions/helpers (optional)
-│   └── logger.py           # Custom logger (if needed)
+├── core/                       # The essential services: the "brain" and "senses".
+│   ├── __init__.py
+│   ├── listener.py             # Handles all voice input (Speech-to-Text).
+│   ├── speaker.py              # Handles all voice output (Text-to-Speech).
+│   ├── command_parser.py       # Decides which feature to run based on user's command.
 │
-├── assets/                 # Images, icons, etc. (if used in UI/voice)
-│
-└── tests/                  # Unit tests for modules (optional)
-    └── test_file_ops.py
+└── features/                   # The "hands": All the actions the assistant can perform.
+    │
+    ├── __init__.py
+    │
+    ├── system_operations/      # MODULE 1: All tasks related to the OS.
+    │   ├── __init__.py
+    │   ├── power.py            # --> Shutdown, Restart, Sleep, Lock, Sign Out.
+    │   ├── audio.py            # --> Volume controls (mute, set, increase).
+    │   ├── display.py          # --> Brightness controls, Screenshot.
+    │   ├── network.py          # --> Wi-Fi and Bluetooth controls.
+    │   └── applications.py     # --> Open/Close apps, Task Manager, Show Desktop.
+    │
+    ├── file_operations/        # MODULE 2: (For Later) All file/folder tasks.
+    │   ├── __init__.py
+    │   └── file_manager.py     # --> Create, Delete, Copy, Move files.
+    │
+    ├── web_operations/         # MODULE 3: (For Later) All internet-related tasks.
+    │   ├── __init__.py
+    │   ├── browser.py          # --> Google Search, Open websites.
+    │   └── youtube.py          # --> Search and play YouTube videos.
+    │
+    └── utility_operations/     # MODULE 4: Simple, miscellaneous tasks.
+        ├── __init__.py
+        ├── clipboard.py        # --> Read/Write to clipboard.
+        └── info.py             # --> Tell time, date, battery, IP address.
 ```
