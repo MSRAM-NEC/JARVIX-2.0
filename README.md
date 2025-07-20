@@ -16,8 +16,7 @@ An always-on, voice-controlled AI assistant that can:
 
 - MSRAM(Lead)
 - GOWSIKAN(Member)
-
-
+- 
 
 ---
 
