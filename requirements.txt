@@ -1,5 +1,4 @@
-numpy
-speechrecognition
+SpeechRecognition
 whisper
 pyttsx3
 pyaudio
@@ -10,7 +9,6 @@ psutil
 pygetwindow
 opencv-python
 pyperclip
-pywhatkit
-wolframalpha
 openai
 gpt4all
+ollama

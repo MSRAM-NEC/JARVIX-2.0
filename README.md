@@ -36,41 +36,84 @@ An always-on, voice-controlled AI assistant that can:
 ```
 JARVIX-2.0/
 │
-├── main.py                     # The central entry point. Starts the assistant and runs the main loop.
+├── main.py                          # Entry point
+├── config.yaml                      # User settings (wake word, paths, profiles)
+├── requirements.txt                 # Python dependencies
+├── README.md                        # Project overview
+├── ollama_setup.md                  # Local LLM (Ollama) installation guide
 │
-├── requirements.txt            # All project dependencies.
-├── README.md                   # Project documentation.
-├── config.py                   # Central configuration (e.g., save paths, default settings).
-│
-├── core/                       # The essential services: the "brain" and "senses".
+├── core/                            # Core AI & orchestration
 │   ├── __init__.py
-│   ├── listener.py             # Handles all voice input (Speech-to-Text).
-│   ├── speaker.py              # Handles all voice output (Text-to-Speech).
-│   ├── command_parser.py       # Decides which feature to run based on user's command.
+│   ├── brain.py                     # Ollama interface & prompt management
+│   ├── llm_manager.py               # Model loader/switcher
+│   ├── listener.py                  # Wake-word & speech‑to‑text
+│   ├── speaker.py                   # Text‑to‑speech engine
+│   ├── intent_parser.py             # Map LLM output → actions
+│   ├── memory.py                    # Session/history manager
+│   └── utils.py                     # Core helpers (logging, config)
 │
-└── features/                   # The "hands": All the actions the assistant can perform.
-    │
-    ├── __init__.py
-    │
-    ├── system_operations/      # MODULE 1: All tasks related to the OS.
-    │   ├── __init__.py
-    │   ├── power.py            # --> Shutdown, Restart, Sleep, Lock, Sign Out.
-    │   ├── audio.py            # --> Volume controls (mute, set, increase).
-    │   ├── display.py          # --> Brightness controls, Screenshot.
-    │   ├── network.py          # --> Wi-Fi and Bluetooth controls.
-    │   └── applications.py     # --> Open/Close apps, Task Manager, Show Desktop.
-    │
-    ├── file_operations/        # MODULE 2: (For Later) All file/folder tasks.
-    │   ├── __init__.py
-    │   └── file_manager.py     # --> Create, Delete, Copy, Move files.
-    │
-    ├── web_operations/         # MODULE 3: (For Later) All internet-related tasks.
-    │   ├── __init__.py
-    │   ├── browser.py          # --> Google Search, Open websites.
-    │   └── youtube.py          # --> Search and play YouTube videos.
-    │
-    └── utility_operations/     # MODULE 4: Simple, miscellaneous tasks.
-        ├── __init__.py
-        ├── clipboard.py        # --> Read/Write to clipboard.
-        └── info.py             # --> Tell time, date, battery, IP address.
+├── modules/                         # Functional capability packs
+│   ├── file_operations/             # File system tasks
+│   │   ├── __init__.py
+│   │   ├── operations.py            # CRUD: create, delete, rename, move
+│   │   ├── search.py                # Filename & content search
+│   │   └── organizer.py             # Smart folder structuring
+│   │
+│   ├── system_control/              # OS & app controls
+│   │   ├── __init__.py
+│   │   ├── power.py                 # Shutdown, restart, lock screen
+│   │   ├── applications.py          # Launch/close programs
+│   │   ├── hardware.py              # Volume/brightness adjustments
+│   │   └── security.py              # Authentication gates
+│   │
+│   ├── web_operations/              # Internet‑enabled tasks
+│   │   ├── __init__.py
+│   │   ├── browser.py               # Open URLs, bookmarks
+│   │   └── youtube.py               # Search/play videos
+│   │
+│   ├── communication/               # Email & messaging
+│   │   ├── __init__.py
+│   │   ├── email_sender.py          # SMTP/gmail automation
+│   │   └── whatsapp.py              # WhatsApp Web via Selenium
+│   │
+│   └── knowledge_engine/            # Local knowledge & summaries
+│       ├── __init__.py
+│       ├── queries.py               # Ask LLM questions
+│       ├── summarization.py         # Text condensation
+│       └── documents.py             # PDF/txt parsing
+│
+├── experiments/                     # Prototype & cutting‑edge
+│   ├── vision/                      # Screen OCR & gesture
+│   │   ├── screen_parser.py
+│   │   └── gesture_control.py
+│   │
+│   └── llm_plugins/                 # Custom skill builders
+│       ├── live_coder.py            # Voice-driven code editing
+│       └── skill_compiler.py        # NL→new module scaffolds
+│
+├── utils/                           # Shared utilities
+│   ├── __init__.py
+│   ├── auth.py                      # Voice‑print user auth
+│   ├── logger.py                    # Structured logs
+│   └── error_handler.py             # Graceful recovery
+│
+├── assets/                          # Static resources
+│   ├── icons/                       # Tray & notification icons
+│   ├── sounds/                      # Audio feedback clips
+│   └── models/                      # Cached LLM weights (optional)
+│
+├── tests/                           # Automated tests
+│   ├── unit/
+│   │   ├── test_listener.py
+│   │   ├── test_brain.py
+│   │   └── test_file_ops.py
+│   └── integration/
+│       ├── test_full_flow.py
+│       └── test_system_control.py
+│
+└── docs/                            # Developer & user docs
+    ├── ARCHITECTURE.md              # System design overview
+    ├── API_REFERENCE.md             # Module interfaces
+    └── CONTRIBUTING.md              # How to contribute  
+
 ```
